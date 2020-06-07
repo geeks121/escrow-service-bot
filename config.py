@@ -10,13 +10,13 @@ from coinbase.wallet.client import Client
 
 
 # Configuration variable
-TOKEN = os.getenv("TOKEN")
+TOKEN = os.getenv("bot_token")
 
-ADMIN_ID = os.getenv("ADMIN_ID")
+ADMIN_ID = os.getenv("bot_admin")
 
 # Coinbase API for payments
-API_KEY = os.getenv("API_KEY")
-API_SECRET = os.getenv("API_SECRET")
+API_KEY = os.getenv("cb api")
+API_SECRET = os.getenv("cb secret")
 
 bot = telebot.TeleBot(TOKEN, threaded=True)
 
