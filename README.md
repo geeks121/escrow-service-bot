@@ -7,19 +7,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-version 1-blue.svg?cacheSeconds=2592000" />
-  <a href="" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-</p>
 
 
 <!-- PROJECT LOGO -->
@@ -43,6 +30,21 @@
   </p>
 </p>
 
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-version 1-blue.svg?cacheSeconds=2592000" />
+  <a href="" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+</p>
+
+
 
 
 <!-- TABLE OF CONTENTS -->
@@ -58,6 +60,7 @@
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
+* [Donation](#donation)
 * [License](#license)
 * [Author](#contact)
 
@@ -75,9 +78,16 @@ This is a growing problem and my [Escrow Service Bot](https://github.com/Pycomet
 
 The Escrow Service Bot offers an automated service acting as an escrow platform, able to facilitate a completely save trade environment on which both the seller and buyer can thrive and do business happily.
 
-All payments are being made directly to the parties, currently either through Bitcoin & Etherium which ofcourse is predefined by the seller in his/her local currency.
+All payments are being made directly to the respective parties, either through Bitcoin, Ethereum, Litecoin, Ripplecoin or Bitcoin Cash cryptocurrency which ofcourse is predefined by the seller's choice of local currency from the following:
 
-With an affiliate program part of the structure, administrators of different Telegram Group platforms are also able to use the [Escrow Service Bot](https://github.com/Pycomet/EscrowService-Bot) is conducting save and fast business within their groups smoothly, with each transaction being completed secured and easily traceable.
+- US Dollars (USD)
+- Euros (EUR)
+- British Pound (GBP)
+- Canadian Dollar (CAD)
+- Japanese Yen (JPY)
+- The Swiss Franc (CHF)
+
+With an affiliate program being part of the structure, administrators of different Telegram Group platforms are also able to use the [Escrow Service Bot](https://github.com/Pycomet/EscrowService-Bot) in conducting save and fast business transactions within their groups smoothly, with each transaction being completed secured and easily traceable. Also, each registered group admin is entitled to a charge on every trade carried out by the group members.
 
 
 ### Ideal Users
@@ -181,10 +191,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 See the [open issues](https://github.com/Pycomet/EscrowService-Bot/issues) for a list of proposed features (and known issues). Here is the shortlisted prospects;
 
-- More Country Currencies
+- More Country Currencies (Added Successfully!)
 
-- More Crytocurrencies for trading (For example; Ripplecoin and others)
+- More Crytocurrencies for trading (For example; Ripplecoin and others) (Added Successfully!)
 
+- User account rating based on previous trades
+
+- Website to showcase more details information on the bot along with a dashboard to monitor trades
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -198,6 +211,16 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 
+<!-- DONATION -->
+## Donation
+
+If you are impressed with my project and wish to buy me a cup of coffee, you can donate to the project through any of the means below
+
+- Bitcoin(BTC) -> 3Lr6duZ7ai4G8KpEqAmeiPSKTcUBt31iZ5
+- Etherium(ETH) -> 0x56B7534EED80591033F63DD8D5dCaa3efAC4a92B
+- Bitcoin Cash(BCH) -> qqqvhf966xhtv2ak4t9jpey5tq2f4v54dg0ezwdp5t
+
+Thanks
 
 <!-- LICENSE -->
 ## License
