@@ -14,6 +14,7 @@ btc_account = accounts.data[6]
 ltc_account = accounts.data[1]
 xrp_account = accounts.data[2]
 bch_account = accounts.data[5]
+xlm_account = accounts.data[3]
 
 def get_user(msg):
     "Returns or creates a new user"
@@ -135,8 +136,13 @@ def add_affiliate_bch(id, wallet):
     affiliate = session.query(Affiliate).filter_by(id=id).first()
     affiliate.bch_wallet = wallet
     session.add(affiliate)
-    session.commit()
+    #session.commit()
 
+def add_affiliate_xlm(id, wallet):
+    affiliate = session.query(Affiliate).filter_by(id=id).first()
+    affiliate.xlm_wallet = wallet
+    session.add(affiliate)
+    session.commit()
 
 def open_new_trade(user, currency):
     """
@@ -180,6 +186,8 @@ def add_coin(user, coin):
         trade.receive_address_id = xrp_account.create_address().address
     elif coin == "BCH":
         trade.receive_address_id = bch_account.create_address().address
+    elif coin == "XLM":
+        trade.receive_address_id = xlm_account.create_address().address
     else:
         pass
 
@@ -228,6 +236,8 @@ def get_receive_address(trade):
     elif trade.coin == "BCH":
         wallet = bch_account.get_address(trade.receive_address_id).address
 
+    elif trade.coin == "XLM":
+        wallet = xlm_account.get_address(trade.receive_address_id).address
     else:
         return "ERROR!"
 
@@ -292,6 +302,8 @@ def check_payment(trade, hash):
             transaction_hash = xrp_account.get_address_transactions(trade.receive_address_id).data[-1].network.hash
         elif trade.coin == "BCH":
             transaction_hash = bch_account.get_address_transactions(trade.receive_address_id).data[-1].network.hash
+        elif trade.coin == "XLM":
+            transaction_hash = xlm_account.get_address_transactions(trade.receive_address_id).data[-1].network.hash
         else:
             transaction_hash = ""
 
@@ -404,6 +416,22 @@ def pay_funds_to_seller(trade):
                 currency = "BCH"
             )
 
+        close_trade(trade)
+
+    elif trade.coion == "XLM":
+        xlm_account.send_money(
+            to = trade.wallet,
+            amount = str(price),
+            currency = "XLM",
+        )
+
+        if affiliate != None:
+
+            xlm_account.send_money(
+                to affiliate.xlm_wallet,
+                amount = str(add_price),
+                currency = "XLM"
+            )
         close_trade(trade)
 
     else:
@@ -521,11 +549,24 @@ def pay_to_buyer(trade, wallet):
 
         close_trade(trade)
 
+    elif trade.coion == "XLM":
+        xlm_account.send_money(
+            to = trade.wallet,
+            amount = str(price),
+            currency = "XLM",
+        )
+
+        if affiliate != None:
+
+            xlm_account.send_money(
+                to = affiliate.xlm_wallet,
+                amount = str(a_price),
+                currency = "XLM"
+            )
+        close_trade(trade)
+
     else:
         pass
-
-
-
 
 #######################DISPUTE############################
 def get_dispute(id):

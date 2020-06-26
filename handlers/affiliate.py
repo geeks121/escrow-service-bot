@@ -163,6 +163,30 @@ def add_bitcoincash_space(msg):
         wallet = wallet
     )
 
+    question = bot.send_message(
+        user.id,
+        emoji.emojize(
+            """
+Please paste in your Stellar Lumens (XLM) receive address :grey_question:
+            """,
+            use_aliases=True
+        )
+    )
+
+    question = question.wait()
+
+    bot.register_next_step_handler(question, add_stellar_space)
+
+def add_stellar_space(msg):
+    "Add Stellar Lumens For Affiliate"
+    wallet = msg.text
+    user = get_user(msg=msg)
+
+    add_affiliate_xlm(
+        id = user.chat,
+        wallet = wallet
+    )
+
     bot.send_message(
         msg.from_user.id,
         emoji.emojize(

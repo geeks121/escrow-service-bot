@@ -6,11 +6,11 @@ from sqlalchemy.orm import sessionmaker, relationship, backref
 from config import *
 
 Base = declarative_base()
-
-engine = create_engine(
-    os.getenv("DATABASE_URL"),
-    echo=False)
-#    connect_args={'check_same_thread': False},
+#DATABASE_URL="mysql+pymysql://root:root@localhost:3308"
+engine = create_engine("mysql+pymysql://root:root@localhost:3308")
+#    os.getenv("DATABASE_URL"),
+#    echo=False)
+#connect_args={'check_same_thread': False},
 
 
 class User(Base):
@@ -105,6 +105,7 @@ class Affiliate(Base):
     ltc_wallet = Column(String)
     xrp_wallet = Column(String)
     bch_wallet = Column(String)
+    xlm_wallet = Column(String)
     admin = Column(Integer)
 
     def __repr__(self):

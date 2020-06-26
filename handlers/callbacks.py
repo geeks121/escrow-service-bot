@@ -56,7 +56,10 @@ def callback_answer(call):
         open_new_trade(call, "CHF")
         select_coin(call.from_user)
 
-
+    elif call.data == "IDR":
+        #create trade
+        open_new_trade(call, "IDR")
+        select_coin(call.from_user)
 
 
     #COIN OPTIONS
@@ -88,6 +91,12 @@ def callback_answer(call):
         add_coin(
             user=call.from_user,
             coin="BCH")
+        trade_price(call.from_user)
+
+    elif call.data == "xlm":
+        add_coin(
+            user=call.from_user,
+            coin="XLM")
         trade_price(call.from_user)
 
 

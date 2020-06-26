@@ -12,7 +12,8 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://escrowbbot.herokuapp.com/' + TOKEN)
+#    bot.set_webhook(url='https://escrowbbot.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://escrowbot.herokuapp.com/' + TOKEN)
     return "!", 200
 
 
