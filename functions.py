@@ -418,21 +418,21 @@ def pay_funds_to_seller(trade):
 
         close_trade(trade)
 
-    elif trade.coion == "XLM":
-        xlm_account.send_money(
-            to = trade.wallet,
-            amount = str(price),
-            currency = "XLM",
-        )
+#    elif trade.coion == "XLM":
+#        xlm_account.send_money(
+#            to = trade.wallet,
+#            amount = str(price),
+#            currency = "XLM",
+#        )
 
-        if affiliate != None:
+#        if affiliate != None:
 
-            xlm_account.send_money(
-                to affiliate.xlm_wallet,
-                amount = str(add_price),
-                currency = "XLM"
-            )
-        close_trade(trade)
+#            xlm_account.send_money(
+#                to affiliate.xlm_wallet,
+#                amount = str(add_price),
+#                currency = "XLM"
+#            )
+#        close_trade(trade)
 
     else:
         pass
@@ -548,6 +548,8 @@ def pay_to_buyer(trade, wallet):
             )
 
         close_trade(trade)
+    else:
+        pass
 """
     elif trade.coion == "XLM":
         xlm_account.send_money(
@@ -565,8 +567,7 @@ def pay_to_buyer(trade, wallet):
             )
         close_trade(trade)
 """
-    else:
-        pass
+
 
 #######################DISPUTE############################
 def get_dispute(id):
