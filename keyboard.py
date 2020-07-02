@@ -47,11 +47,11 @@ def local_currency_menu():
     b = types.InlineKeyboardButton(text=emoji.emojize(":euro: Euros (EUR)", use_aliases=True), callback_data="euro")
     c = types.InlineKeyboardButton(text=emoji.emojize(":pound: British Pound (EUR)", use_aliases=True), callback_data="pound")
     d = types.InlineKeyboardButton(text=emoji.emojize(":dollar: Canadian Dollar (CAD)", use_aliases=True), callback_data="c_dollar")
-    e = types.InlineKeyboardButton(text=emoji.emojize(":yen: Japanese Yen (JPY)", use_aliases=True), callback_data="yen")
+ #   e = types.InlineKeyboardButton(text=emoji.emojize(":yen: Japanese Yen (JPY)", use_aliases=True), callback_data="yen")
     f = types.InlineKeyboardButton(text=emoji.emojize(":euro: Swiss Franc (CHF)", use_aliases=True), callback_data="swiss")
     g = types.InlineKeyboardButton(text=emoji.emojize(":rupiah: Indonesia Rupiah (IDR)", use_aliases=True), callback_data="rupiah")
     
-    keyboard.add(a,b,c,d,e,f,g)
+    keyboard.add(a,b,c,d,f,g)
     return keyboard
 
 
@@ -62,8 +62,8 @@ def coin_menu():
     c = types.InlineKeyboardButton(text=emoji.emojize("Litecoin (LTC)", use_aliases=True), callback_data="ltc")
     d = types.InlineKeyboardButton(text=emoji.emojize("Ripplecoin (XRP)", use_aliases=True), callback_data="xrp")
     e = types.InlineKeyboardButton(text=emoji.emojize("Bitcoin Cash (BCH)", use_aliases=True), callback_data="bch")
-    f = types.InlineKeyboardButton(text=emoji.emojize("Stellar (XLM)", use_aliases=True), callback_data="xlm")
-    keyboard.add(a,b,c,d,e,f)
+#    f = types.InlineKeyboardButton(text=emoji.emojize("Stellar (XLM)", use_aliases=True), callback_data="xlm")
+    keyboard.add(a,b,c,d,e)
     return keyboard
 
 def give_verdict():

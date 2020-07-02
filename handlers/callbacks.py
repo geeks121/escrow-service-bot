@@ -5,6 +5,7 @@ from bot import *
 
 from handlers.verdict import *
 
+
 # Callback Handlers
 @bot.callback_query_handler(func=lambda call: True)
 def callback_answer(call):
@@ -25,50 +26,50 @@ def callback_answer(call):
 
 
 
-    #CURRENCY OPTIONS
+    # CURRENCY OPTIONS
     elif call.data == "dollar":
-        #create trade
+        # create trade
         open_new_trade(call, "USD")
         select_coin(call.from_user)
 
     elif call.data == "euro":
-        #create trade
+        # create trade
         open_new_trade(call, "EUR")
         select_coin(call.from_user)
 
     elif call.data == "pound":
-        #create trade
+        # create trade
         open_new_trade(call, "GBP")
         select_coin(call.from_user)
 
     elif call.data == "c_dollar":
-        #create trade
+        # create trade
         open_new_trade(call, "CAD")
         select_coin(call.from_user)
 
-    elif call.data == "yen":
-        #create trade
-        open_new_trade(call, "JPY")
-        select_coin(call.from_user)
-    
+    #    elif call.data == "yen":
+    #       # create trade
+    #       open_new_trade(call, "JPY")
+    #       select_coin(call.from_user)
+
     elif call.data == "swiss":
-        #create trade
+        # create trade
         open_new_trade(call, "CHF")
         select_coin(call.from_user)
 
     elif call.data == "IDR":
-        #create trade
+        # create trade
         open_new_trade(call, "IDR")
         select_coin(call.from_user)
 
 
-    #COIN OPTIONS
+    # COIN OPTIONS
     elif call.data == "btc":
         add_coin(
             user=call.from_user,
             coin="BTC")
         trade_price(call.from_user)
-    
+
     elif call.data == "eth":
         add_coin(
             user=call.from_user,
@@ -93,18 +94,15 @@ def callback_answer(call):
             coin="BCH")
         trade_price(call.from_user)
 
-    elif call.data == "xlm":
-        add_coin(
-            user=call.from_user,
-            coin="XLM")
-        trade_price(call.from_user)
-
-
-
+    #   elif call.data == "xlm":
+    #       add_coin(
+    #          user=call.from_user,
+    #          coin="XLM")
+    #      trade_price(call.from_user)
 
     # PAYMENT VALIDATION
     elif call.data == "payment_confirmation":
-        #Check payment confirmation
+        # Check payment confirmation
         question = bot.send_message(
             call.from_user.id,
             emoji.emojize(":point_right: Paste the transaction hash for confirmation below", use_aliases=True),
@@ -153,7 +151,7 @@ def callback_answer(call):
 
 
     elif call.data == "verdict":
-        #Pass Verdict
+        # Pass Verdict
         question = bot.send_message(
             call.from_user.id,
             "What is your final decision to the trade? "
@@ -168,7 +166,7 @@ def callback_answer(call):
 
     elif call.data == "refund_to_buyer":
         refund_to_buyer(call.from_user)
-    
+
     elif call.data == "pay_to_seller":
         refund_to_seller(call.from_user)
 
@@ -177,4 +175,3 @@ def callback_answer(call):
 
     else:
         pass
-

@@ -548,7 +548,7 @@ def pay_to_buyer(trade, wallet):
             )
 
         close_trade(trade)
-
+"""
     elif trade.coion == "XLM":
         xlm_account.send_money(
             to = trade.wallet,
@@ -564,7 +564,7 @@ def pay_to_buyer(trade, wallet):
                 currency = "XLM"
             )
         close_trade(trade)
-
+"""
     else:
         pass
 

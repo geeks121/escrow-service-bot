@@ -7,9 +7,10 @@ from config import *
 
 Base = declarative_base()
 #DATABASE_URL="mysql+pymysql://root:root@localhost:3308"
-engine = create_engine("mysql+pymysql://root:root@localhost:3308")
-#    os.getenv("DATABASE_URL"),
-#    echo=False)
+#engine = create_engine("mysql+pymysql://root:root@localhost:3308")
+engine = create_engine(
+    os.getenv("DATABASE_URL"),
+    echo=False)
 #connect_args={'check_same_thread': False},
 
 
@@ -105,7 +106,7 @@ class Affiliate(Base):
     ltc_wallet = Column(String)
     xrp_wallet = Column(String)
     bch_wallet = Column(String)
-    xlm_wallet = Column(String)
+  #  xlm_wallet = Column(String)
     admin = Column(Integer)
 
     def __repr__(self):

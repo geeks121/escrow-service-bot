@@ -162,12 +162,12 @@ def add_bitcoincash_space(msg):
         id = user.chat,
         wallet = wallet
     )
-
+    """
     question = bot.send_message(
         user.id,
         emoji.emojize(
             """
-Please paste in your Stellar Lumens (XLM) receive address :grey_question:
+#Please paste in your Stellar Lumens (XLM) receive address :grey_question:
             """,
             use_aliases=True
         )
@@ -186,7 +186,7 @@ def add_stellar_space(msg):
         id = user.chat,
         wallet = wallet
     )
-
+"""
     bot.send_message(
         msg.from_user.id,
         emoji.emojize(

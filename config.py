@@ -5,9 +5,14 @@ from telebot import types
 import emoji
 from blockchain import blockexplorer
 from flask import Flask, request
-
 from coinbase.wallet.client import Client
+from dotenv import load_dotenv
 
+load_dotenv()
+load_dotenv(verbose=True)
+from pathlib import Path # python3 only
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
 
 # Configuration variable
 TOKEN = os.getenv("TOKEN")
