@@ -29,7 +29,7 @@ class Trade(Base):
     """
     __tablename__ = 'trades'
 
-    id = Column(String)(20), primary_key=True)
+    id = Column(String(20), primary_key=True)
 
     seller = Column(Integer)
     buyer = Column(Integer)
