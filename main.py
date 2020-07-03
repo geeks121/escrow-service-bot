@@ -14,7 +14,7 @@ def webhook():
     bot.remove_webhook()
 #    bot.set_webhook(url='https://escrowbbot.herokuapp.com/' + TOKEN)
     bot.set_webhook(url='https://zapber-telebot.herokuapp.com/' + TOKEN)
-    return "okbro!", 200
+    return "!", 200
 
 
 
