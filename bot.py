@@ -196,7 +196,7 @@ def refund_to_buyer(msg):
     "Refund Coins Back To Buyer"
     trade = get_recent_trade(msg)
 
-    if trade.payment_status == True:
+    if trade.payment_status is True:
 
         question = bot.send_message(
             trade.buyer,
@@ -242,7 +242,7 @@ def refund_to_seller(msg):
     "Refund Coins Back To Buyer"
     trade = get_recent_trade(msg)
 
-    if trade.payment_status == True:
+    if trade.payment_status is True:
 
         pay_funds_to_seller(trade)
 
