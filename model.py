@@ -18,7 +18,7 @@ class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
-    chat = Column(String(20))
+    chat = Column(String(9))
 
     def __repr__(self):
         return "<User(id='%s')>" % (self.id)
@@ -28,22 +28,20 @@ class Trade(Base):
     SqlAlchemy ORM Trade Model
     """
     __tablename__ = 'trades'
-
-    id = Column(String(20), primary_key=True)
-
+    id = Column(String(16), primary_key=True)
     seller = Column(Integer)
     buyer = Column(Integer)
     price = Column(Integer)
 
-    currency = Column(String(30))
-    coin = Column(String(20))
-    wallet = Column(String(60))
+    currency = Column(String(32))
+    coin = Column(String(32))
+    wallet = Column(String(50))
 
     payment_status = Column(Boolean)
-    created_at = Column(String(16))
-    updated_at = Column(String(16))
+    created_at = Column(String(32))
+    updated_at = Column(String(32))
     is_open = Column(Boolean)
-    affiliate_id = Column(String(20))
+    affiliate_id = Column(String(39))
 
     receive_address_id = Column(String(50))
 
@@ -66,10 +64,10 @@ class Dispute(Base):
     """
     __tablename__ = "disputes"
 
-    id = Column(String(40), unique=True, primary_key=True)
+    id = Column(Integer, unique=True, primary_key=True)
     user = Column(Integer)
-    complaint = Column(String(120))
-    created_on = Column(String(12))
+    complaint = Column(String(162))
+    created_on = Column(String(32))
     trade_id = Column(ForeignKey("trades.id", ondelete="CASCADE"))
 
     trade = relationship("Trade", uselist=False)
@@ -97,12 +95,12 @@ class Affiliate(Base):
     """
     __tablename__ = "affiliates"
 
-    id = Column(String(16), unique=True, primary_key=True)
-    btc_wallet = Column(String(50))
-    eth_wallet = Column(String(50))
-    ltc_wallet = Column(String(50))
-    xrp_wallet = Column(String(50))
-    bch_wallet = Column(String(50))
+    id = Column(Integer, unique=True, primary_key=True)
+    btc_wallet = Column(String(40))
+    eth_wallet = Column(String(40))
+    ltc_wallet = Column(String(40))
+    xrp_wallet = Column(String(40))
+    bch_wallet = Column(String(40))
   #  xlm_wallet = Column(String)
     admin = Column(Integer)
 
@@ -120,7 +118,7 @@ class Affiliate(Base):
 # Base.metadata.drop_all(bind=engine)
 # Base.metadata.create_all(bind=engine)
 
-Base.metadata.create_all(engine)
+Base.metadata.create_all(bind=engine)
 
 Session = sessionmaker(bind=engine, autoflush=False)
 
@@ -128,4 +126,3 @@ session = Session()
 
 # import pdb; pdb.set_trace()
 session.close()
-
